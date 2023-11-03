@@ -10,13 +10,14 @@ namespace SistemaGestionInventario
         public int Id { get; set; }
     }
 
-    class Program
+     internal class Program
     {
         static List<Producto> inventario = new List<Producto>();
 
         static void Main(string[] args)
         {
-            while (true)
+            string opcion = "";
+            while (opcion != "5")
             {
                 Console.WriteLine("Bienvenido al Sistema de Gestión de Inventario");
                 Console.WriteLine("1. Ver inventario");
@@ -25,7 +26,7 @@ namespace SistemaGestionInventario
                 Console.WriteLine("4. Eliminar producto");
                 Console.WriteLine("5. Salir");
                 Console.WriteLine("Seleccione una opción: ");
-                string opcion = Console.ReadLine();
+                opcion = Console.ReadLine();
 
                 switch (opcion)
                 {
@@ -43,7 +44,7 @@ namespace SistemaGestionInventario
                         break;
                     case "5":
                         Console.WriteLine("Gracias por utilizar el sistema");
-                        return; // Salir del programa
+                        break; 
                     default:
                         Console.WriteLine("Opción no válida. Inténtelo de nuevo.");
                         break;
